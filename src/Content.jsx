@@ -2,6 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [products, setProducts] = useState([]);
@@ -26,6 +29,9 @@ export function Content() {
    
     return (
       <div>
+      <Signup />
+      <Login />
+      <LogoutLink />
         <ProductsNew onCreateProduct={handleCreateProduct} />
         <ProductsIndex products={products} />
       </div>
