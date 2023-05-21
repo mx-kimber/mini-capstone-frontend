@@ -12,6 +12,7 @@ export function ProductsIndex(props) {
           <p>Description: {product.description}</p>
           <p>Quantity: {product.quantity}</p>
           <p>Supplier: {product.supplier.name}</p>
+          <button onClick={() => props.onShowProduct(product)}>More info</button>
           
         </div>
      ))}
