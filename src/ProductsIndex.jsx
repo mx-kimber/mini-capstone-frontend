@@ -1,5 +1,3 @@
-
-
 export function ProductsIndex(props) {
   console.log(props);
   return (
