@@ -7,6 +7,8 @@ import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
 import { ProductsShow } from "./ProductsShow";
 import { Modal } from "./Modal";
+import { Routes, Route } from "react-router-dom";
+import { About } from "./About";
 
 
 export function Content() {
@@ -71,11 +73,14 @@ export function Content() {
   
   return (
     <div>
-    <Signup />
-    <Login />
-    <LogoutLink />
-    <ProductsNew onCreateProduct={handleCreateProduct} />
-    <ProductsIndex products={products} onShowProduct={handleShowProduct} />
+      
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
+        <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct}/>} />
+      </Routes>
 
     <Modal show={isProductsShowVisible} onClose={handleClose}>
         <h1>Modal Test</h1>
