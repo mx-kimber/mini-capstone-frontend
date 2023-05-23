@@ -11,14 +11,15 @@ export function ProductsShow(props) {
     
   return (
     <div>
-      <h1>Product information</h1>
+      {/* <h1>Product information</h1> */}
       <p>Id: {props.product.id}</p>
       <p>Name: {props.product.name}</p>
-      <p>Supplier Id: {props.product.supplier.name}</p>
+      <p>Supplier: [id:{props.product.supplier.id}] {props.product.supplier.name}</p>
       <p>Price: {props.product.price}</p>
       <p>Quantity: {props.product.quantity}</p>
       <p>Description: {props.product.description}</p>
-      
+      <img src={props.product.images[0].url} />
+
       <form onSubmit={handleSubmit}>
       <div>
         Name: <input name="name" type="text" defaultValue={props.product.name} />

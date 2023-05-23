@@ -84,7 +84,7 @@ export function Content() {
       </Routes>
 
     <Modal show={isProductsShowVisible} onClose={handleClose}>
-        <h1>Modal Test</h1>
+        <h1>{currentProduct.name}</h1>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
       </Modal>
 
