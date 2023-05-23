@@ -24,7 +24,7 @@ export function ProductsShowPage() {
       <p>Price: {product.price}</p>
       <p>Quantity: {product.quantity}</p>
       <p>Description: {product.description}</p>
-      <img src={product.images[0].url} />
+      <img src={product.images.url} />
     </div>
   )
 }

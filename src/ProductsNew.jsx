@@ -3,7 +3,9 @@ export function ProductsNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params =new FormData(event.target);
-    props.onCreateProduct(params, () => event.target.reset());
+    console.log('handling submit');
+    props.onCreateProduct(params) 
+    window.location.href = "/";
   };
 
   return (

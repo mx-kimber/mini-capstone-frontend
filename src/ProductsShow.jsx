@@ -36,8 +36,18 @@ export function ProductsShow(props) {
       <div>
         Description: <input name="description" type="text" defaultValue={props.product.description}/>
       </div>
+      <div>
+        Images: <input name="url" type="text" defaultValue={props.product.image}/>
+      </div>
+      <div>
+        <input name="url" type="text" defaultValue={props.product.image}/>
+      </div>
+      <div>
+        <input name="url" type="text" defaultValue={props.product.image}/>
+      </div>
         <button type= "submit"> Update Product</button>
       </form>
+      <hr />
       <button onClick={handleClick}>Destroy Product</button>
     </div>
   );
