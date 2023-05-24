@@ -14,13 +14,15 @@ export function ProductsShow(props) {
       {/* <h1>Product information</h1> */}
       <p>Id: {props.product.id}</p>
       <p>Name: {props.product.name}</p>
-      <p>Supplier: [id:{props.product.supplier.id}] {props.product.supplier.name}</p>
+      <p>Supplier: [id:{props.product.supplier.id}]{props.product.supplier.name}</p>
       <p>Price: {props.product.price}</p>
       <p>Quantity: {props.product.quantity}</p>
       <p>Description: {props.product.description}</p>
+      
       {props.product.images && props.product.images.map((image, productImage) => (
         <img key={productImage} src={image.url} alt={`Product Image ${productImage + 1}`} />
-      ))}
+      ))
+      }
   
       <form onSubmit={handleSubmit}>
       <div>
