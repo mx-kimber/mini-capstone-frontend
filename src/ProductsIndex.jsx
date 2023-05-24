@@ -12,11 +12,13 @@ export function ProductsIndex(props) {
           <p>Description: {product.description}</p>
           <p>Quantity: {product.quantity}</p>
           <p>Supplier: {product.supplier.name}</p>
-          {product.images && product.images[0] && (
-            <p><img src={product.images[0].url} alt="Product Image" /></p>
-          )}
-            <button onClick={() => props.onShowProduct(product)}>More info</button>
+          <p>Categories: {product.images && product.images.map((image, productImages) => (
+            <p key={productImages}>
+            <img src={image.url} alt={`Product Image ${productImages + 1}`} /></p>
+          ))
+          }</p>
           
+            <button onClick={() => props.onShowProduct(product)}>More info</button>          
         </div>
      ))}
     </div>

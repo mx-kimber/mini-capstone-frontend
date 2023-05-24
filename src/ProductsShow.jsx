@@ -18,8 +18,10 @@ export function ProductsShow(props) {
       <p>Price: {props.product.price}</p>
       <p>Quantity: {props.product.quantity}</p>
       <p>Description: {props.product.description}</p>
-      <img src={props.product.images[0].url} />
-
+      {props.product.images && props.product.images.map((image, productImage) => (
+        <img key={productImage} src={image.url} alt={`Product Image ${productImage + 1}`} />
+      ))}
+  
       <form onSubmit={handleSubmit}>
       <div>
         Name: <input name="name" type="text" defaultValue={props.product.name} />
