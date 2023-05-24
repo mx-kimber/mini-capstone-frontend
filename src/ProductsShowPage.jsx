@@ -26,8 +26,8 @@ export function ProductsShowPage() {
       <p>Description: {product.description}</p>
       
       {product.images && product.images.map((image, productImage) => (
-        <p key={productImage}>
-          <img src={image.url} alt={`Product Image ${productImage + 1}`} /></p>
+        <div key={productImage}>
+          <img src={image.url} alt={`Product Image ${productImage + 1}`} /></div>
         ))
       }
       
