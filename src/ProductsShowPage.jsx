@@ -20,7 +20,7 @@ export function ProductsShowPage() {
     <div>
       <p>Id: {product.id}</p>
       <p>Name: {product.name}</p>
-      <p>Supplier: {product.supplier.name}</p>
+      {/* <p>Supplier: {product.supplier.name}</p> */}
       <p>Price: {product.price}</p>
       <p>Quantity: {product.quantity}</p>
       <p>Description: {product.description}</p>
