@@ -5,3 +5,7 @@ html {
 img {
   width: 200px
 }
+
+#error_style {
+  color: red
+}
