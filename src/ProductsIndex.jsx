@@ -1,9 +1,15 @@
+import { useState } from "react"
+
 export function ProductsIndex(props) {
-  console.log(props);
+  const [searchTerm, setSearchTerm] = useState("")
+  // console.log(props);
+
   return (
-    <div>
-      <h1>All products</h1>
-      {props.products.map((product) => (
+    <div id="products-index">
+       {searchTerm}
+      <p>Search: <input type="text" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value)}} /></p>
+      {props.products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase())).map(product => (
+  
         <div key={product.id}>
           <h2>{product.name}</h2>
           <p>Price: {product.price}</p>
