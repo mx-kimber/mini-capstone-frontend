@@ -6,7 +6,7 @@ export function ProductsIndex(props) {
 
   return (
     <div id="products-index">
-       {searchTerm}
+       {/* {searchTerm} */}
       <p>Search: <input type="text" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value)}} list="titles"/></p>
       <datalist id="titles">
         {props.products.map(product => (

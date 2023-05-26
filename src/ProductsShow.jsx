@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export function ProductsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -9,6 +11,17 @@ export function ProductsShow(props) {
     props.onDestroyProduct(props.product);
   };
     
+  const handleAddToCart = (event) => {
+    console.log('adding to cart')
+    event.preventDefault()
+    // user fills out quantity (we will handle product_id)
+    const params = new FormData(event.target);
+    axios.post("http://localhost:3000/carted_products.json", params).then(response => {
+      console.log(response.data)
+    })
+    // after, look at the shopping cart
+  }
+
   return (
     <div>
       {/* <h1>Product information</h1> */}
@@ -23,7 +36,7 @@ export function ProductsShow(props) {
         <img key={productImage} src={image.url} alt={`Product Image ${productImage + 1}`} />
       ))
       }
-  
+
       <form onSubmit={handleSubmit}>
       <div>
         Name: <input name="name" type="text" defaultValue={props.product.name} />
@@ -45,6 +58,12 @@ export function ProductsShow(props) {
       </form>
       <hr />
       <button onClick={handleClick}>Destroy Product</button>
+
+      <form onSubmit={handleAddToCart}>
+        <p>quantity: <input name="quantity" type="text" defaultValue={0} /></p>
+        <p> <input name="product_id" type="hidden" defaultValue={props.product.id} /></p>
+        <button type="input">Add product to cart</button>
+      </form>
     </div>
   );
 }
