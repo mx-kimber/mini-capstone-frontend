@@ -9,7 +9,8 @@ import { ProductsShowPage } from "./ProductsShowPage";
 import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom";
 import { About } from "./About";
-
+import { CartedProductsIndex } from "./CartedProductsIndex";
+import { OrdersIndex } from "./OrdersIndex"
 
 export function Content() {
   const [products, setProducts] = useState([]);
@@ -81,6 +82,10 @@ export function Content() {
         <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
         <Route path="/" element={<ProductsIndex products={products} onShowProduct={handleShowProduct}/>} />
         <Route path="/products/:id" element={<ProductsShowPage /> } />
+        <Route path="/orders" element={<OrdersIndex />} />
+        <Route path="/carted_products" element={<CartedProductsIndex />} />
+        
+
       </Routes>
 
     <Modal show={isProductsShowVisible} onClose={handleClose}>

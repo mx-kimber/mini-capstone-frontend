@@ -17,10 +17,11 @@ export function Header() {
         <a href="/">Home</a> | 
         <Link to="/about">About</Link> | 
         <Link to="/products/new">New Product</Link> |  
+        <Link to="/carted_products">Shopping Cart</Link> | 
+        <Link to="/orders">My Orders</Link> |
+
         {authenticationLinks}
-        {/* <Link to="/signup">Signup</Link> | 
-        <Link to="/login">Login</Link> |  */}
-        {/* <LogoutLink /> */}
+
       </nav>
     </header>
   )

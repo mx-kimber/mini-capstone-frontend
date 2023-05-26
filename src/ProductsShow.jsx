@@ -14,12 +14,12 @@ export function ProductsShow(props) {
   const handleAddToCart = (event) => {
     console.log('adding to cart')
     event.preventDefault()
-    // user fills out quantity (we will handle product_id)
+    
     const params = new FormData(event.target);
     axios.post("http://localhost:3000/carted_products.json", params).then(response => {
       console.log(response.data)
+      window.location.href = "/carted_products"
     })
-    // after, look at the shopping cart
   }
 
   return (
